@@ -35,7 +35,7 @@ const Categories = () => {
                 const { products, count } = response.data;
                 setProducts(products);
                 setCount(count);
-                setLoading(false);
+                setLoading(false);``
             } catch (err) {
                 setError('Failed to fetch products');
                 setLoading(false);
@@ -139,10 +139,10 @@ const Categories = () => {
                         </ul>
                         <ul className="categories__products">
                             {products.length > 0 && products.map((product) => (
-                                <li key={product.id} className="categories__card2">
+                                <li key={product._id} className="categories__card2">
                                     <NavLink
                                         className="categories__link"
-                                        to={`/shop/${product.id}`}
+                                        to={`/shop/${product._id}`}
                                     >
                                         <img className="categories__image2" src={product.pictures} alt={product.name} />
                                     </NavLink>

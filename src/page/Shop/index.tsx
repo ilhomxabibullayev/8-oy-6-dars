@@ -4,7 +4,7 @@ const Shop = () => {
     const { id } = useParams();
 
     return (
-        <div>
+        <div className="w-[300px] h-[10px]">
             <h1>Shop</h1>
             {id ? (
                 <p>Viewing product with ID: {id}</p>
