@@ -17,17 +17,15 @@ interface Product {
 }
 
 interface ApiResponse {
-    data: {
-        products: Product[];
-        count: number;
-    };
+    products: Product[];
+    count: number;
 }
 
 const Categories = () => {
     const [products, setProducts] = useState<Product[]>([]);
     const [count, setCount] = useState<number>(0);
     const [loading, setLoading] = useState<boolean>(true);
-    const [error, setError] = useState<string>('');
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         const fetchProducts = async () => {
