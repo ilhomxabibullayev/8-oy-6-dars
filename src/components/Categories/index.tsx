@@ -13,6 +13,7 @@ interface Product {
     name: string;
     price: number;
     pictures: string;
+    description: string;
 }
 
 interface ApiResponse {
@@ -35,7 +36,7 @@ const Categories = () => {
                 const { products, count } = response.data;
                 setProducts(products);
                 setCount(count);
-                setLoading(false);``
+                setLoading(false);
             } catch (err) {
                 setError('Failed to fetch products');
                 setLoading(false);
@@ -44,7 +45,7 @@ const Categories = () => {
         };
 
         fetchProducts();
-    }, [count]);
+    }, []);
 
     if (loading) {
         return <div>Loading...</div>;
